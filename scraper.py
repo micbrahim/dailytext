@@ -21,6 +21,9 @@ def send_imessage(phone_number, message_body):
     os.system('osascript msg.applescript {} "{}"'.format( phone_number, message_body ) )
 
 def main():
+    if len(sys.argv) != 2:
+        print("invalid length")
+        exit(1)
     number = int(sys.argv[1])
     if not (isinstance(number, int)):
         print("invalid number")
